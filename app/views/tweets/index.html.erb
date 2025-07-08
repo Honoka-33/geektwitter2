@@ -1,17 +1,57 @@
-Enjoy Geektwitter!
+<%= stylesheet_link_tag 'index', :media => "all" %>
 
-<h1>Geektwitter</h1>
-<%= button_to "ログアウト", destroy_user_session_path, metod: :delete %>
-<h3>Tweet一覧</h3>
-<%= link_to "新規投稿へ", tweets_new_path %>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+    <% Tag.all.each do |t| %>
+        <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+    <% end %>
+    <%= submit_tag '検索' %>
+<% end %>
+
+<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+    <%= text_field_tag :tag %>
+    <%= submit_tag 'タグを追加' %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+<%= link_to "レビューを投稿する", new_tweet_path %>
+
 <div class="tweets-container">
+<h2>レビュー一覧</h2>
   <% @tweets.each do |t| %>
-    <div class="tweet">
-      <%= t.body %>
-      <%= t.created_at %>
-      <%= link_to "詳細へ", tweet_path(t.id) %>
-      <%= link_to "編集する", edit_tweet_path(t.id) %>
-      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+    <div>
+      <h3>総合評価：
+        <span class="star-rating">
+        <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+        <span class="star-rating-back">★★★★★</span>
+        </span> 
+      </h3>
     </div>
-  <% end %>
+  <div class="tweet">
+    <div class="main-box">
+      <div class="left-container"></div>
+      <div class=right-container>
+        <%= link_to t.user.name, user_path(t.user.id) %>
+        <%= t.created_at %>
+        <%= raw sanitize_with_hashtags(t.body) %>
+        <%= link_to "詳細", tweet_path(t.id) %>
+          <% if user_signed_in? && current_user.id == t.user_id %>
+            <%= link_to "編集", edit_tweet_path(t.id) %>
+            <%= button_to "削除", tweet_path(t.id), method: :delete %>
+          <% end %> 
+      </div>
+    <% if t.image.attached? %>
+          <%= image_tag t.image, size: '100x80'%>
+    <% end %>
+   
+  </div>
+<% end %>
 </div>
+
+
+<%= page_entries_info @tweets %>
+<%= paginate @tweets %>

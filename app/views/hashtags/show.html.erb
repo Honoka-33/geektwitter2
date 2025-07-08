@@ -1,0 +1,10 @@
+<h1>#<%= @hashtag.name %> のツイート</h1> 
+<div class="tweets-list"> 
+<% if @tweets.any? %> 
+<% @tweets.each do |tweet| %> 
+<%= render 'tweets/tweet', tweet: tweet %> 
+<% end %> 
+<% else %> 
+<p>このハッシュタグのツイートはまだありません。</p> 
+<% end %> 
+</div>

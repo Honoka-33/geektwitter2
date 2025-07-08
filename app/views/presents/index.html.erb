@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>プレゼント診断スタート</title>
+    </head>
+
+    <body>
+        <header>
+            <h1 class="headline">
+            <a>ドキドキ☆プレゼント診断</a>
+            </h1>
+            <ul class="nav-list">
+                <li class="nav-list-item">プレゼントについて</li>
+                <li class="nav-list-item"><%= link_to "診断", presents_path, class: "link" %></li>
+            </ul>
+        </header>
+
+        <div class="start">
+            <h6>Are you ready?</h6>
+            <%= link_to "診断を始める", new_present_path, class: "link" %>
+        </div>
+    </body>

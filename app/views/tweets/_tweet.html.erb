@@ -1,0 +1,18 @@
+<%# app/views/tweets/_tweet.html.erb %>
+
+<div class="tweet">
+  <% if tweet.image.attached? %>
+    <%= image_tag tweet.image, size: '250x200' %>
+  <% end %>
+  <%= link_to tweet.user.name, user_path(tweet.user.id) %>
+  <%= tweet.user.email %>
+  <%= raw sanitize_with_hashtags(tweet.body) %>
+  <%= tweet.created_at %>
+
+  <%= link_to "詳細へ", tweet_path(tweet.id) %>
+
+  <% if user_signed_in? && current_user.id == tweet.user_id %>
+    <%= link_to "編集する", edit_tweet_path(tweet.id) %>
+    <%= link_to "削除する", tweet_path(tweet.id), method: :delete %>
+  <% end %>
+</div>
