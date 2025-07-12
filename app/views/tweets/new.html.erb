@@ -1,12 +1,11 @@
-<h1>GeekTwitter</h1>
-<h3>新規Tweet</h3>
+<h1>✍レビュー投稿</h1>
 <%= form_for @tweet do |f| %>
   <div class="field">
-    <%= f.label :body %>
-    <%= f.text_field :body, :size => 140 %>
+    <%= f.label :感想 %>
+    <%= f.text_field :body, :size => 40 %>
   </div>
     <div class="field">
-    <%= f.label :image %>
+    <%= f.label :写真 %>
     <%= f.file_field :image %>
   </div>
     <div class='form-group'>
@@ -19,10 +18,10 @@
             </div>
         <% end %>
     </div>
-    <h5>総合評価</h5>
+    <h4>総合評価</h4>
       <div class="post_form">
       <%= f.radio_button :overall, 5 ,id: 'star1'%>
-      <label for="star1"><span class="text">わんだふる</span>★</label>
+      <label for="star1"><span class="text">神</span>★</label>
 
       <%= f.radio_button :overall, 4 ,id: 'star2'%>
       <label for="star2"><span class="text">ぐっど</span>★</label>
@@ -41,3 +40,91 @@
     <%= f.submit "投稿する" %>
 <% end %>
 <%= link_to "投稿一覧に戻る", tweets_path %>
+
+<style>
+body {
+  background: #f8fafc;
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+form {
+  background: #fff6fa;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(200, 200, 220, 0.15);
+  padding: 32px 24px 24px 24px;
+  max-width: 480px;
+  margin: 32px auto 0 auto;
+}
+.field, .form-group, .post_form {
+  margin-bottom: 20px;
+}
+label, .form-check-label {
+  color: #7b6f72;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+input[type="text"], input[type="file"], .form-check-input {
+  border: 1px solid #e0d7ec;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #f6faff;
+  margin-top: 4px;
+  font-size: 1em;
+}
+input[type="text"]:focus, input[type="file"]:focus {
+  outline: none;
+  border-color: #b6e0fe;
+  background: #eaf6fb;
+}
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.form-check-input {
+  accent-color: #b6e0fe;
+  margin-right: 8px;
+}
+.post_form label {
+  display: inline-block;
+  margin-right: 10px;
+  background: #ffe6fa;
+  border-radius: 12px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: 1px solid #f3d1e6;
+}
+.post_form label:hover, .post_form input[type="radio"]:checked + label {
+  background: #e0f7fa;
+  border-color: #b6e0fe;
+}
+input[type="radio"] {
+  accent-color: #f7b6e0;
+  margin-right: 4px;
+}
+.post_form .text {
+  font-size: 0.95em;
+  color: #a48fa3;
+  margin-right: 4px;
+}
+input[type="submit"] {
+  background: linear-gradient(90deg, #b6e0fe 0%, #ffe6fa 100%);
+  color: #6d5d6e;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 32px;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(200, 200, 220, 0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+input[type="submit"]:hover {
+  background: linear-gradient(90deg, #e0f7fa 0%, #ffe6fa 100%);
+  color: #4b3b4e;
+}
+h1, h3, h4, h5 {
+  color: #a48fa3;
+  text-align: center;
+}
+</style>

@@ -57,6 +57,6 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  position: fixed;
+  position: sticky;
   justify-content: flex-end;
 }
