@@ -14,6 +14,8 @@
     <%= submit_tag 'タグを追加' %>
 <% end %>
 
+<%= link_to "詳細検索へ", search_path %>
+
 <% if user_signed_in? %>
   <%= link_to "マイページへ", user_path(current_user.id) %>
 <% end %>

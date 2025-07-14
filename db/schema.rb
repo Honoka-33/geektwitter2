@@ -46,15 +46,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_25_152534) do
     t.index ["name"], name: "index_hashtags_on_name", unique: true
   end
 
-  create_table "lectures", force: :cascade do |t|
-    t.string "name"
-    t.string "username"
-    t.integer "overall"
-    t.integer "level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "presents", force: :cascade do |t|
     t.string "question"
     t.datetime "created_at", null: false
@@ -77,6 +68,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_25_152534) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hashtag_id"], name: "index_tweet_hashtags_on_hashtag_id"
+    t.index ["tweet_id", "hashtag_id"], name: "index_tweet_hashtags_on_tweet_id_and_hashtag_id", unique: true
     t.index ["tweet_id"], name: "index_tweet_hashtags_on_tweet_id"
   end
 
@@ -96,7 +88,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_25_152534) do
     t.integer "user_id"
     t.integer "overall"
     t.integer "level"
-    t.string "question"
   end
 
   create_table "users", force: :cascade do |t|
