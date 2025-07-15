@@ -9,18 +9,19 @@
     <%= submit_tag '検索' %>
 <% end %>
 
+
 <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
     <%= text_field_tag :tag %>
     <%= submit_tag 'タグを追加' %>
 <% end %>
-
-<%= link_to "詳細検索へ", search_path %>
 
 <% if user_signed_in? %>
   <%= link_to "マイページへ", user_path(current_user.id) %>
 <% end %>
 
 <%= link_to "レビューを投稿する", new_tweet_path %>
+
+<%= link_to "詳細検索", searches_path %>
 
 <div class="tweets-container">
 <h2>レビュー一覧</h2>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] 
   resources :tweets
   resources :presents
+  get 'searches' => 'searches#index', as: :searches
 
   root 'hello#index'
 end
