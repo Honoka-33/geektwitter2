@@ -17,4 +17,5 @@ before_action :authenticate_user!
             search = params[:search]
             @tweets = Tweet.joins(:user).where("body LIKE ?", "%#{search}%") if params[:search].present?
             @tweets = @tweets.page(params[:page]).per(5)
+    end
 end
