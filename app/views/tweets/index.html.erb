@@ -1,27 +1,26 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
 
-<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<h4> </h4>
 
-<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-    <% Tag.all.each do |t| %>
-        <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
-    <% end %>
-    <%= submit_tag '検索' %>
+<%= form_tag({controller: "tweets", action: "index"}, method: :get, class: "search-form") do %>
+  <%= text_field_tag :tag, nil, placeholder: "キーワードを入力", class: "search-input" %><br>
+  <%= submit_tag "検索" %>
 <% end %>
 
+<div class="button-grid">
+  <div><%= button_to "診断で探してみる", new_present_path, method: :get %></div>
 
-<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-    <%= text_field_tag :tag %>
-    <%= submit_tag 'タグを追加' %>
-<% end %>
+  <div><%= button_to "詳細検索", searches_path, method: :get %></div>
 
-<% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
-<% end %>
+  <div><%= button_to "レビューを投稿する", new_tweet_path, method: :get %></div>
 
-<%= link_to "レビューを投稿する", new_tweet_path %>
+  <% if user_signed_in? %>
+    <div><%= button_to "マイページへ", user_path(current_user.id), method: :get %></div>
+  <% end %>
+</div>
 
-<%= link_to "詳細検索", searches_path %>
+
+</div>
 
 <div class="tweets-container">
 <h2>レビュー一覧</h2>
@@ -34,18 +33,15 @@
         </span> 
       </h3>
     </div>
-  <div class="tweet">
-    <div class="main-box">
-      <div class="left-container"></div>
-      <div class=right-container>
-        <%= link_to t.user.name, user_path(t.user.id) %>
-        <%= t.created_at %>
-        <%= raw sanitize_with_hashtags(t.body) %>
-        <%= link_to "詳細", tweet_path(t.id) %>
-          <% if user_signed_in? && current_user.id == t.user_id %>
-            <%= link_to "編集", edit_tweet_path(t.id) %>
-            <%= button_to "削除", tweet_path(t.id), method: :delete %>
-          <% end %> 
+    <div class="tweet">
+      <div class="main-box">
+        <div class="left-container">
+            <p><%= link_to t.user.name, user_path(t.user.id) %><br><%= t.body %></p></div>
+        <div class="right-container">
+          <%= link_to "詳細", tweet_path(t.id) %>
+          <%= link_to "編集", edit_tweet_path(t.id) %>
+          <%= link_to "削除", tweet_path(t.id), method: :delete %>
+        </div>
       </div>
     <% if t.image.attached? %>
           <%= image_tag t.image, size: '100x80'%>
@@ -56,5 +52,12 @@
 </div>
 
 
-<%= page_entries_info @tweets %>
-<%= paginate @tweets %>
+<h4><%= page_entries_info @tweets %></h4>
+<h4><%= paginate @tweets %></h4>
+
+<div class="logout-button-wrapper">
+  <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-button" %>
+</div>
+
+
+<h1> </h1>

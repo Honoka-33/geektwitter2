@@ -1,6 +1,9 @@
-<%= stylesheet_link_tag 'index', :media => "all" %>
+<%= stylesheet_link_tag 'searches_index', :media => "all" %>
 
-<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+    <%= text_field_tag :tag %>
+    <%= submit_tag 'タグを追加' %>
+<% end %>
 
 <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
     <% Tag.all.each do |t| %>
@@ -9,12 +12,4 @@
     <%= submit_tag '検索' %>
 <% end %>
 
-
-<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-    <%= text_field_tag :tag %>
-    <%= submit_tag 'タグを追加' %>
-<% end %>
-
-<% if user_signed_in? %>
-    <%= link_to "マイページへ", user_path(current_user.id) %>
-<% end %>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>

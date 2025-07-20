@@ -18,37 +18,81 @@
   padding: 0;
   margin: 0;
 }
+
 body {
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
-    Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  background-image: url('/assets/flower_background.jpg');
+  background-size: cover;        
+  background-repeat: no-repeat;   
+  background-position: center;    
+  background-attachment: fixed;   
+  color: #333;                    
 }
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* 温かい木目カントリー調のヘッダー */
 header {
-  background-color: #9cf8f8;
-  height: 60px;
+  background-color: #f8f0e2;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
+  border-bottom: 4px solid #f86a6a;
+  box-shadow: 0 2px 8px rgba(120, 72, 36, 0.15);
+  height: 70px;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 32px;
 }
-header a {
-  color: #A58CDC; 
-  text-decoration: none; 
-}
+
 header h1 {
-  color: #A58CDC;
+  color: #7c5a3a;
   margin-left: 20px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0 #fff8e1;
 }
+
+header a {
+  color: #4e300d;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+header a:hover {
+  color: #7c5a3a;
+}
+
 .header-list {
   display: flex;
   align-items: center;
 }
+
 header ul {
   display: flex;
 }
+
 header li {
   list-style: none;
-  margin-right: 40px;
+  margin-right: 32px;
+  font-family: 'Georgia', serif;
 }
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.header-title h1,
+.header-title h3 {
+  margin: 0; /* 余分な余白を防ぐために */
+  text-align: left;
+  font-family: 'Georgia', serif;
+  color: #4e3c28;
+}
+
 footer {
   color: white;
   height: 30px;
@@ -56,7 +100,18 @@ footer {
   bottom: 0;
   width: 100%;
   display: flex;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-repeat: repeat;
+  background-size: auto;
+  box-shadow: 0 -2px 8px rgba(120, 72, 36, 0.2);
   align-items: center;
-  position: sticky;
   justify-content: flex-end;
+  
+  position: fixed; /* ← stickyからfixedに変更 */
+  left: 0;          /* ← 左端に固定 */
+  z-index: 1000; 
+}
+
+a {
+  color: #441304; 
 }

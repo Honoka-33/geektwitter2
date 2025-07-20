@@ -4,19 +4,36 @@
 }
 h2 {
   width: 150px;
+  color: #7c5c3b;
+  font-family: 'Merriweather', serif;
   margin: 30px auto;
-  text-align: flex-start;
+  text-align: center;
 }
+
 .tweet {
-  border-top: solid #A58CDC;
+  border-top: solid #95cefd;
   margin-top: 10px;
   padding-top: 20px;
+  background: #f8f7ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(170, 220, 212, 0.08);
+}
+
+.tweets-container {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(9, 9, 141, 0.12);
+  padding: 24px;
 }
 .main-box {
   margin: 5px 0;
   display: flex;
   justify-content: space-between;
 }
+.right-container {
+  padding-top: 50px; /* 必要な分だけ余白を取る */
+}
+
 .time {
   display: flex;
   justify-content: flex-end;

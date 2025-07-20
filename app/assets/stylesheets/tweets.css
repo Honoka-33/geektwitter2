@@ -22,7 +22,8 @@
   }
   .post_form label{
     position: relative;
-    padding: 10px 10px 0;
+    background: linear-gradient(135deg, #f7e9d7 0%, #e6c8a5 100%);
+    border-radius: 8px;
     color: gray;
     cursor: pointer;
     font-size: 30px; 
@@ -41,8 +42,6 @@
   .post_form input[type='radio']:checked ~ label{
     color: #ffcc00;
   }
-
-
 
 
   .star-rating {
@@ -66,3 +65,34 @@
     
   }
 
+  .button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 500px;
+  margin: 40px auto; /* 中央に配置 */
+}
+
+.button-grid > div {
+  flex: 0 0 calc(50% - 12px); /* 2列にする */
+  text-align: center;
+}
+
+.button-grid form {
+  display: inline-block; /* ボタンサイズを調整 */
+}
+
+.logout-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px; /* 他の要素と距離を空ける */
+  margin-bottom: 40px; /* ページ最下部との余白 */
+}
+
+.logout-button {
+    background: #d6d300; 
+    color: #FFF;
+    box-shadow: 0px 0px 0px 5px #d6d300;
+    border: dashed 1px #FFF;
+}

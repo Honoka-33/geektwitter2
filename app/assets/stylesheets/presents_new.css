@@ -1,0 +1,36 @@
+p {
+    text-align: left;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+h4 {
+    text-align: left;
+    font-family: "Segoe UI", "Rounded Mplus 1c", "Arial Rounded MT Bold", "Hiragino Maru Gothic Pro", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #f14848; 
+}
+.sindanbotan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    color: #f14848
+}
+
+/* Add spacing between p and h4 */
+
+h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gift-diagnosis-form {
+    width: 320px;
+    margin: 0 auto;
+    padding: 24px;
+    background: linear-gradient(135deg, #fadddd 60%, #fadddd 100%), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(200, 200, 200, 0.12);
+}

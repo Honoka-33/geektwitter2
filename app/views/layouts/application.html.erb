@@ -11,13 +11,14 @@
 
   <body>
     <header>
-      <h1>Presenting Presents</h1>
-      <div class="header-list">
-      <ul>
+      <div class="header-title">
+        <h1>Gesucheria</h1>
+        <h3>プレゼント探しのお手伝いをするサイト</h3>
+      </div>
+      <ul class="header-list">
         <li><%= link_to "ホーム", tweets_path %></li>
         <li><%= link_to "新規投稿",new_tweet_path %></li>
       </ul>
-      </div>
     </header>
     <main>
       <%= yield %>

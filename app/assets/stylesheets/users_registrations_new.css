@@ -1,66 +1,48 @@
-/* users_registrations_new.css */
-/* users_sessions_new.css と同じ体裁 */
-
-.form-container {
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 32px 24px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+h1 {
+  display: block;
+  width: 100%;
+  margin: 30px auto 20px auto;
+  text-align: center;
+  color: #420000;
+  white-space: nowrap;
+  text-shadow:
+    -1px -1px 0 #fff,
+    2px -1px 0 #fff,
+    -1px  2px 0 #fff,
+    2px  2px 0 #fff;
 }
 
-.form-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-    text-align: center;
+h4 {
+  color: black;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+    1px  1px 0 #fff;
 }
 
-.form-group {
-    margin-bottom: 18px;
+.signup-form {
+  background: linear-gradient(135deg, #f3e5c2 60%, #e7d3b0 100%), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-blend-mode: multiply;
+  background-size: cover;
+  width: 340px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(180, 140, 90, 0.10);
+  border: 2px solid #e2c9a5; /* wood border */
 }
 
-.form-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-}
 
-.form-input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.form-button {
-    width: 100%;
-    padding: 12px;
-    background: #1976d2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.form-button:hover {
-    background: #1565c0;
-}
-
-.form-link {
-    display: block;
-    margin-top: 16px;
-    text-align: center;
-    color: #1976d2;
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-
-.form-link:hover {
-    text-decoration: underline;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1.5px solid #d7b899; /* light wood */
+  border-radius: 8px;
+  background: #fff8e1; /* soft cream */
+  font-size: 16px;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }

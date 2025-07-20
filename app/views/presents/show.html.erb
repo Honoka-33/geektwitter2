@@ -1,22 +1,33 @@
+<%= stylesheet_link_tag 'presents_show', :media => "all" %>
         <div class="intoro">
-            <h5>診断結果</h5>
+            <h4>診断結果</h4>
             <p>おすすめのプレゼントは…</p>
         </div>
-        <div class="tweet-container">
+        <div class="present-container">
             <div class="tweet">
                 <% if @present.question == "111" %>
-                <h6>誕生日×友達×実用性</h6>
-                <p>柑橘系の代表的な原料</p>
-                <p>清涼感があり、爽やかな印象</p>
+                <h4>誕生日×友達×実用性</h4>
+                <h2>高級文房具</h2>
+                <p>たくさん使ってもらえるものを選ぶべし！</p>
 
                 <% elsif @present.question == "112" %>
-                <h6>シトラス</h6>
-                <p>オレンジに似た柑橘系の果物</p>
-                <p>リラックス効果がある</p>
+                <h4>誕生日×友達×ロマンチック</h4>
+                <div class="ribbon-image-wrapper" style="background-image: url(<%= asset_path 'ribbon.png' %>);">
+                    <h2 class="ribbon-text">香水</h2>
+                </div>
+
+                <p>記憶に残る香りは、きっと心にも残る。</p>
+                <p>香水は友達の特別な日を彩るロマンチックなギフトに最適！ 専門店に行ってお友達のイメージを伝えれば、オーダーメイドの香水を調合してもらうこともできるよ👍</p>
+                <p>ただし、匂いには好き嫌いが別れやすいから注意も必要。</p>
+                <p>相手の好みの香りを事前にリサーチできるとよりよきかも✨</p>
+                <h5>【こっちもおすすめ】</h5>
+                <h4>アルバム、キャンドル、フラワーアレンジメント</h4>
+                <h4></h4>
+                <h4></h4>
 
                 <% elsif @present.question == "113" %>
-                <h6>ローズ</h6>
-                <p>華やかで上品な香り</p>
+                <h4>誕生日×友達×ユニーク</h4>
+                <h2>「おもしろ検定」合格証明書風のメッセージカード</h2>
                 <p>ストレスを緩和してくれる効果がある</p>
 
                 <% elsif @present.question == "121" %>

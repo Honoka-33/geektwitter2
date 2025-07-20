@@ -1,8 +1,10 @@
-<%= form_for(@present, class: 'form-horizontal', role: 'form') do |f| %>
+<%= stylesheet_link_tag 'presents_new', :media => "all" %>
+<h1> </h1>
+<%= form_for(@present, html: { class: 'form-horizontal gift-diagnosis-form', role: 'form' }) do |f| %>
             <div class="container-sindan">
                 <div class="row">
                     <div class="col-12">
-                        <p>Question1. シチュエーションは？</p>
+                        <h4>Question1. シチュエーションは？</h4>
                     </div>
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "1", nil %>誕生日</p>
@@ -15,7 +17,7 @@
                     </div>
 
                     <div class="col-12">
-                        <p>Question2. 自分と相手の関係性は？</p>
+                        <h4>Question2. 自分と相手の関係性は？</h4>
                     </div>
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "1", nil %>友人</p>
@@ -28,13 +30,13 @@
                     </div>
 
                     <div class="col-12">
-                        <p>Question3. 相手の好みは？</p>
+                        <h4>Question3. 相手のイメージは？</h4>
                     </div>
                     <div class="col-6">
-                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>シンプルで実用性重視</p>
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>実用性重視の現実主義</p>
                     </div>
                     <div class="col-6">
-                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>トレンドを抑えたもの</p>
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>おしゃれなロマンチスト</p>
                     </div>
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "3", nil %>唯一無二の個性派！</p>
@@ -42,6 +44,7 @@
                 </div>
             </div>
             <div class="sindanbotan">
-                <%= f.submit "post" %>
+                <%= f.submit "診断" %>
             </div>
 <% end %>
+<h1> </h1>

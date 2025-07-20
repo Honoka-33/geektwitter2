@@ -1,0 +1,48 @@
+p {
+    text-align: center;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+h4 {
+    text-align: center;
+    font-family: "Segoe UI", "Rounded Mplus 1c", "Arial Rounded MT Bold", "Hiragino Maru Gothic Pro", Arial, sans-serif;
+    font-weight: 500;
+    color: #f14848; /* ナチュラルで目立つグリーン系 */
+}
+
+h5 {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.ribbon-image-wrapper {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+    background-image: url('ribbon.png'); /* パスは後述 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 80px; /* リボン画像の高さに合わせて調整 */
+}
+
+.ribbon-text {
+    position: relative;
+    display: inline-block;
+    top: 0%;
+    transform: translateY(-50%);
+    color: white; /* 画像の上に文字がくるので白などに */
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.present-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
