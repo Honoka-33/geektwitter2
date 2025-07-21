@@ -83,7 +83,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.18.6)
       msgpack (~> 1.2)
-    brakeman (7.0.2)
+    brakeman (7.1.0)
       racc
     builder (3.3.0)
     capybara (3.40.0)
@@ -121,6 +121,7 @@ GEM
     drb (2.2.3)
     erb (4.0.4)
       cgi (>= 0.3.3)
+    error_highlight (0.7.0)
     erubi (1.13.1)
     faraday (2.13.1)
       faraday-net_http (>= 2.0, < 3.5)
@@ -133,6 +134,7 @@ GEM
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
     ffi (1.17.2-x64-mingw-ucrt)
+    ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -192,6 +194,8 @@ GEM
       net-protocol
     nio4r (2.7.4)
     nokogiri (1.18.8-x64-mingw-ucrt)
+      racc (~> 1.4)
+    nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.2)
@@ -315,6 +319,7 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sqlite3 (2.7.0-x64-mingw-ucrt)
+    sqlite3 (2.7.0-x86_64-linux-gnu)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
@@ -326,8 +331,6 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2025.2)
-      tzinfo (>= 1.0.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
@@ -351,6 +354,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   activestorage-cloudinary-service
