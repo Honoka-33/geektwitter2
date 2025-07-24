@@ -16,7 +16,7 @@ module ApplicationHelper
       Rails.logger.debug "--- Hashtag found? #{hashtag.present?}. Hashtag object: #{hashtag.inspect}"
 
       if hashtag
-        link = link_to "##{name}", hashtag_path(hashtag), class: "hashtag-link"
+        link = link_to "##{name}", hashtag_path(name), class: "hashtag-link"
         Rails.logger.debug "--- Generated link: #{link}"
         link
       else
