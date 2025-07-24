@@ -1,15 +1,21 @@
 <%= stylesheet_link_tag 'searches_index', :media => "all" %>
 
-<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-    <%= text_field_tag :tag %>
-    <%= submit_tag 'タグを追加' %>
-<% end %>
+<%= form_tag({controller: "tweets", action: "index"}, method: :get, class: "search-form") do %>
+  <!-- キーワード入力 -->
+<%= text_field_tag :tag, nil, placeholder: "キーワードを入力", class: "search-input" %><br><br>
 
-<%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+  <!-- 既存タグチェックボックス -->
+  <div class="tag-checkboxes">
     <% Tag.all.each do |t| %>
-        <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+      <label>
+        <%= check_box_tag "tag_ids[]", t.name %>
+        <%= t.name %>
+      </label><br>
     <% end %>
-    <%= submit_tag '検索' %>
+  </div>
+
+  <!-- 検索ボタン -->
+  <%= submit_tag "検索", class: "search-submit" %>
 <% end %>
 
 <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>

@@ -7,8 +7,13 @@
             <div class="tweet">
                 <% if @present.question == "111" %>
                 <h4>誕生日×友達×実用性</h4>
-                <h2>高級文房具</h2>
+                <div class="ribbon-image-wrapper" style="background-image: url(<%= asset_path 'ribbon.png' %>);">
+                    <h2 class="ribbon-text">高級文房具</h2>
+                </div>
                 <p>たくさん使ってもらえるものを選ぶべし！</p>
+                <p>自分じゃ買わないような高級なものをチョイスするのがポイント。</p>
+                <h5>【こっちもおすすめ】</h5>
+                <h4>キーケース、ポケットたくさんついたかばん</h4>
 
                 <% elsif @present.question == "112" %>
                 <h4>誕生日×友達×ロマンチック</h4>
@@ -27,8 +32,11 @@
 
                 <% elsif @present.question == "113" %>
                 <h4>誕生日×友達×ユニーク</h4>
-                <h2>「おもしろ検定」合格証明書風のメッセージカード</h2>
-                <p>ストレスを緩和してくれる効果がある</p>
+                <div class="ribbon-image-wrapper" style="background-image: url(<%= asset_path 'ribbon.png' %>);">
+                    <h2 class="ribbon-text">「おもしろ検定」合格証明書</h2>
+                </div>
+                <p>友達の趣味や特技を活かした世界で一つの特別なギフト。</p>
+                
 
                 <% elsif @present.question == "121" %>
                 <h6>ラベンダー</h6>
